@@ -1,7 +1,9 @@
 ---
-# tasks file for s3fs
+# tasks file for s3fsa
+- name: Update apt cache
+  apt: update_cache=yes
 - name: Install s3fs dependencies
-  apt: pkg={{ item }} state=present
+  apt: pkg={{ item }} state=present 
   with_items:
   - fuse
   - build-essential
